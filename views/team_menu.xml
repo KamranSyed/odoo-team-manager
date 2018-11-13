@@ -17,7 +17,7 @@
     <!-- actions opening views on models -->
 
     <record model="ir.actions.act_window" id="ksteam.action_window">
-      <field name="name">ksteam window</field>
+      <field name="name">List of Teams</field>
       <field name="res_model">ksteam.team</field>
       <field name="view_mode">tree,form</field>
     </record>
@@ -41,19 +41,23 @@
 
     <!-- Top menu item -->
 
-    <menuitem name="Team Management" id="ksteam.menu_root"/>
+    <menuitem name="Team Manager" id="ksteam.menu_root"/>
 
     <!-- menu categories -->
 
     <menuitem name="Menu 1" id="ksteam.menu_1" parent="ksteam.menu_root"/>
+<!--
     <menuitem name="Menu 2" id="ksteam.menu_2" parent="ksteam.menu_root"/>
+-->
 
     <!-- actions -->
 
     <menuitem name="List" id="ksteam.menu_1_list" parent="ksteam.menu_1"
               action="ksteam.action_window"/>
+<!--
     <menuitem name="Server to list" id="ksteam" parent="ksteam.menu_2"
               action="ksteam.action_server"/>
+-->
 
   </data>
 </odoo>
