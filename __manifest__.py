@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # Part of Teams App. See LICENSE and COPYRIGHT files for full copyright and licensing details.
 {
-    'name': "Team",
-    'version': '0.6',
+    'name': "Team Manager",
+    'version': '0.7',
     'summary': """
         Organizes employees into Teams.
         Team management App""",
