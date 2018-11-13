@@ -8,6 +8,6 @@ class team(models.Model):
 	 name = fields.Char(required=True)
 	 description 	= fields.Char()
 	 employee_ids 	= fields.Many2many('hr.employee', string='Employees')
-	 manager_ids 	= fields.Many2many('hr.employee', string='Managers')
+	 manager_ids 	= fields.Many2many('hr.employee', 'ksteam_team_managers_rel', string='Managers')
 	 active			= fields.Boolean('Active?', default=True)
 	 
