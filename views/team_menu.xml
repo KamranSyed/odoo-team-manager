@@ -1,0 +1,59 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="ksteam.list">
+      <field name="name">ksteam list</field>
+      <field name="model">ksteam.team</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="employee_ids"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="ksteam.action_window">
+      <field name="name">ksteam window</field>
+      <field name="res_model">ksteam.team</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- server action to the one above -->
+
+    <record model="ir.actions.server" id="ksteam.action_server">
+      <field name="name">ksteam server</field>
+      <field name="model_id" ref="model_ksteam_team"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+
+
+    <!-- Top menu item -->
+
+    <menuitem name="Team Management" id="ksteam.menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Menu 1" id="ksteam.menu_1" parent="ksteam.menu_root"/>
+    <menuitem name="Menu 2" id="ksteam.menu_2" parent="ksteam.menu_root"/>
+
+    <!-- actions -->
+
+    <menuitem name="List" id="ksteam.menu_1_list" parent="ksteam.menu_1"
+              action="ksteam.action_window"/>
+    <menuitem name="Server to list" id="ksteam" parent="ksteam.menu_2"
+              action="ksteam.action_server"/>
+
+  </data>
+</odoo>
