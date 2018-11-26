@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Part of Teams App. See LICENSE and COPYRIGHT files for full copyright and licensing details.
+# See LICENSE and COPYRIGHT files for full copyright and licensing details.
 {
     'name': "Team Manager",
     'version': '0.7',
